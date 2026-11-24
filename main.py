@@ -29,25 +29,16 @@ def menu():
 
 
 def Compactar():
-    compactado = open("compactado.txt", mode="w+", encoding="utf-8")
-    alfaNumerico = (
-                    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 
-                    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-                    "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", 
-                    "!", "@", "#", "$", "%", "&", "*", "?", "/", "°", "<", ">", " ", "ç", "Ç"
-                )
-
-    filtro = []
-    qnt = 1
-    caractere = txt[0]
-    for i in range(1, len(txt)):
-            if txt[i] == caractere:
-                qnt += 1
-            else:
-                compactado.write(f"{qnt}{caractere}")
-                caractere = txt[i]
-                qnt = 1
-    compactado.write(f"{qnt}{caractere}")
-    compactado.write("\n")
+    with open("compactado.txt", "w", encoding="utf-8") as compactado:
+        qnt = 1
+        caractere = txt[0]
+        for i in range(1, len(txt)):
+                if txt[i] == caractere:
+                    qnt += 1
+                else:
+                    compactado.write(f"{qnt}{caractere}")
+                    caractere = txt[i]
+                    qnt = 1
+        compactado.write(f"{qnt}{caractere}")
 
 menu()
