@@ -144,9 +144,7 @@ def Comparar():
 
     if bytes_ori > 0:
         bytes_eco = ((bytes_ori - bytes_comp) / bytes_ori) * 100
-        carac_eco = ((cara_ori - cara_comp)/ bytes_ori) * 100
         print(f"Diferença: {bytes_ori - bytes_comp} bytes ({bytes_eco:.2f}% de redução)")
-        print(f"Diferença: {cara_ori - cara_comp} bytes ({carac_eco:.2f}% de redução)\n")
     
     Desejo_Do_Usuario()
         
