@@ -150,7 +150,7 @@ def Comparar():
         
 
 def Compactar():
-    arquivo = open("arquivo.txt", mode="r+", encoding="utf-8")
+    arquivo = open("arquivo.txt", "r+", encoding="utf-8")
     txt = arquivo.read()
     compactado = open("compactado.txt", "w+", encoding="utf-8")
     
