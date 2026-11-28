@@ -100,14 +100,16 @@ def Descompactar():
     compactado.close()
     descompactado = open("descompactado.txt", "w+", encoding="utf-8")
     qnt = ""
-
+    cont = 0
 
     for caractere in conteudo:
-        if caractere.isdigit():
+        if(cont%2) == 0:
             qnt += caractere
+            cont += 1
         else:
             descompactado.write(caractere * int(qnt))
             qnt = ""
+            cont += 1
 
     descompactado.close()
     print("Arquivo Descompactado Com Sucesso!\n")
